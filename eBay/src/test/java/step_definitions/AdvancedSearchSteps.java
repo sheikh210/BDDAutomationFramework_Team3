@@ -24,7 +24,7 @@ public class AdvancedSearchSteps extends WebAPI {
 
     @Before
     public void setUp () throws IOException {
-        setUp(false, "browserstack", "windows", "10", "chrome", "83",
+        setUp(false, "browserstack", "OS X", "Catalina", "chrome", "83",
                 "http://ebay.com");
     }
 
