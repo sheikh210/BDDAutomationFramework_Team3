@@ -12,10 +12,10 @@ public class AdvancedSearchPageElements {
     public static final String webElementSelectCategory = "#e1-1";
 
     // Top Search Button (css)
-    public static final String webElementbuttonSearchTop = "#adv_search_from div.adv-s.mb.space-top > button";
+    public static final String webElementButtonSearchTop = "#adv_search_from div.adv-s.mb.space-top > button";
 
     // Bottom Search Button (id)
-    public static final String webElementbuttonSearchBottom = "searchBtnLowerLnk";
+    public static final String webElementButtonSearchBottom = "searchBtnLowerLnk";
 
     // Title & Description Checkbox (css)
     public static final String webElementCheckboxTitleAndDescription = "#LH_TitleDesc";
@@ -23,8 +23,20 @@ public class AdvancedSearchPageElements {
     // Completed Listings Checkbox (xPath)
     public static final String webElementCheckboxCompletedListings = "//*[@id=\"LH_Complete\"]";
 
-    // Completed Listings Checkbox (xPath)
+    // Sold Listings Checkbox (xPath)
     public static final String webElementCheckboxSoldListings = "//*[@id=\"LH_Sold\"]";
+
+    // Show Items Priced From Checkbox (id)
+    public static final String webElementCheckboxShowItemsPricedFrom = "_mPrRngCbx";
+
+    // Minimum Price Input Field (CSS)
+    public static final String webElementInputMinimumPrice = "#adv_search_from input[aria-label*='minimum']";
+
+    // Maximum Price Input Field (CSS)
+    public static final String webElementInputMaximumPrice = "#adv_search_from input[aria-label*='maximum']";
+
+    // Search by price - Results page Price Range (CSS)
+    public static final String webElementResultPriceRange = "#smuys > span > b > span";
 
 
 }
