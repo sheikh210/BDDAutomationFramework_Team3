@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import java.io.IOException;
 
-public class AdvancedSearchSteps extends WebAPI {
+public class AdvancedSearchPageSteps extends WebAPI {
 
     AdvancedSearchPageActions advancedSearchPageActions = new AdvancedSearchPageActions();
 
@@ -42,6 +42,7 @@ public class AdvancedSearchSteps extends WebAPI {
         getInItElements();
         advancedSearchPageActions.navigateToAdvancedSearchPage();
     }
+
 
     // Advanced Search
     @And("user inputs {string} in Keywords field")

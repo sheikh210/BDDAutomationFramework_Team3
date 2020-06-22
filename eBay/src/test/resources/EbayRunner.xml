@@ -3,7 +3,7 @@
     <suite name="Ebay BDD Suite">
         <test name="Test">
             <classes>
-                <class name="runners.AdvancedSearchRunner"/>
+                <class name="runners.AdvancedSearchPageRunner"/>
             </classes>
         </test>
 </suite>
