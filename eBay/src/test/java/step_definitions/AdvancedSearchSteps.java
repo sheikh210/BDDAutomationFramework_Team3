@@ -96,6 +96,24 @@ public class AdvancedSearchSteps extends WebAPI {
     }
 
 
+    //
+    @And("user clicks on Find Stores button")
+    public void user_clicks_on_Find_Stores_button() {
+        getInItElements();
+        advancedSearchPageActions.clickOnFindStoreButton();
+    }
+
+    @And("user inputs {string} in Enter Store Name input field")
+    public void user_inputs_in_Enter_Store_Name_input_field(String storeName) {
+        getInItElements();
+        advancedSearchPageActions.enterKeysFindStoreField(storeName);
+    }
+
+    @And("user clicks Find Store Search button")
+    public void user_clicks_Find_Store_Search_button() {
+        getInItElements();
+        advancedSearchPageActions.clickOnFindStoreSearchButton();
+    }
 
 
 

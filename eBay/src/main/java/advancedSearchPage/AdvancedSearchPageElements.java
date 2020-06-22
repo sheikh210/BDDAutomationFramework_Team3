@@ -38,5 +38,14 @@ public class AdvancedSearchPageElements {
     // Search by price - Results page Price Range (CSS)
     public static final String webElementResultPriceRange = "#smuys > span > b > span";
 
+    // Find Store Button (CSS)
+    public static final String webElementButtonFindStore = "#LeftPanel a[href*='type=7']";
+
+    // Find Store Input Field (CSS)
+    public static final String webElementInputFindStore = "#_nkw";
+
+    // Find Store Search Button (CSS)
+    public static final String webElementButtonSearchFindStore = "#adv_search_from button";
+
 
 }

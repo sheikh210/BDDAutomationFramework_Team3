@@ -22,7 +22,7 @@ Feature: Validate user can search for item using Advanced Search + Price limits
     And user should see "<priceRange>" above search results
 
     Examples:
-      | keyword       | category             | minPrice | maxPrice | pageTitle                                | priceRange                  |
-      | mixer         | Consumer Electronics | 50       | 200      | mixer in Electronics \| eBay             | US $50.00 - US $200.00      |
-      | king mattress | Home & Garden        | 300      | 1000     | king mattress in Home and Garden \| eBay | US $300.00 - US $1,000.00   |
-      | rolex         | Jewelry & Watches    | 1000     | 3000     | rolex in Jewelry and Watches \| eBay     | US $1,000.00 - US $3,000.00 |
+      | keyword       | category             | minPrice | maxPrice | pageTitle                                | priceRange                |
+      | mixer         | Consumer Electronics | 50       | 200      | mixer in Electronics \| eBay             | US $50.00 - US $200.00    |
+      | king mattress | Home & Garden        | 300      | 500      | king mattress in Home and Garden \| eBay | US $300.00 - US $500.00   |
+      | rolex         | Jewelry & Watches    | 800      | 2000     | rolex in Jewelry and Watches \| eBay     | US $800.00 - US $2,000.00 |
