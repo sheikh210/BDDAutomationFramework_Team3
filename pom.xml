@@ -18,6 +18,8 @@
         <module>stJude</module>
         <module>tripAdvisor</module>
         <module>verizonWireless</module>
+        <module>deltaAirlines</module>
+        <module>verizonWireless</module>
     </modules>
 
     <properties>
