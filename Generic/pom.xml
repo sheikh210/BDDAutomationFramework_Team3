@@ -142,6 +142,12 @@
             <artifactId>cucumber-extentsreport</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+        </dependency>
+
     </dependencies>
 
 
@@ -168,6 +174,33 @@
                         <!--                        <suiteXmlFiles>target/test-classes/ESPNTestRunner.xml</suiteXmlFiles>-->
                     </suiteXmlFiles>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Team 3 Cucumber Reports</projectName>
+                            <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+                            <buildNumber>1</buildNumber>
+                            <skip>false</skip>
+                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                            <classificationDirectory>${project.build.directory}/cucumber-reports
+                            </classificationDirectory>
+                            <checkBuildResult>false</checkBuildResult>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

@@ -1,6 +1,7 @@
 package step_definitions;
 
 import advancedSearchPage.AdvancedSearchPageActions;
+import com.vimalselvam.cucumber.listener.ExtentCucumberFormatter;
 import common.WebAPI;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
