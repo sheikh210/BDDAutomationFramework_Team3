@@ -1,6 +1,7 @@
 package advancedSearchPage;
 
 import common.WebAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,56 +9,86 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 import static advancedSearchPage.AdvancedSearchPageElements.*;
 
 public class AdvancedSearchPageActions extends WebAPI {
 
-    @FindBy (id = webElementLinkAdvancedSearch)
+    @FindBy(id = webElementLinkAdvancedSearch)
     public WebElement linkAdvancedSearch;
 
-    @FindBy (id = webElementInputKeywords)
+    @FindBy(id = webElementInputKeywords)
     public WebElement inputKeywords;
 
-    @FindBy (css = webElementSelectCategory)
+    @FindBy(css = webElementSelectCategory)
     public WebElement selectCategory;
 
-    @FindBy (css = webElementButtonSearchTop)
+    @FindBy(css = webElementButtonSearchTop)
     public WebElement buttonSearchTop;
 
-    @FindBy (id = webElementButtonSearchBottom)
+    @FindBy(id = webElementButtonSearchBottom)
     public WebElement buttonSearchBottom;
 
-    @FindBy (css = webElementCheckboxTitleAndDescription)
+    @FindBy(css = webElementCheckboxTitleAndDescription)
     public WebElement checkboxTitleAndDescription;
 
-    @FindBy (xpath = webElementCheckboxCompletedListings)
+    @FindBy(xpath = webElementCheckboxCompletedListings)
     public WebElement checkboxCompletedListings;
 
-    @FindBy (xpath = webElementCheckboxSoldListings)
+    @FindBy(xpath = webElementCheckboxSoldListings)
     public WebElement checkboxSoldListings;
 
-    @FindBy (id = webElementCheckboxShowItemsPricedFrom)
+    @FindBy(id = webElementCheckboxShowItemsPricedFrom)
     public WebElement checkboxShowItemsPricedFrom;
 
-    @FindBy (css = webElementInputMinimumPrice)
+    @FindBy(css = webElementInputMinimumPrice)
     public WebElement inputMinimumPrice;
 
-    @FindBy (css = webElementInputMaximumPrice)
+    @FindBy(css = webElementInputMaximumPrice)
     public WebElement inputMaximumPrice;
 
-    @FindBy (css = webElementResultPriceRange)
+    @FindBy(css = webElementResultPriceRange)
     public WebElement resultPriceRange;
 
-    @FindBy (css = webElementButtonFindStore)
+    @FindBy(css = webElementButtonFindStore)
     public WebElement buttonFindStore;
 
-    @FindBy (css = webElementInputFindStore)
+    @FindBy(css = webElementInputFindStore)
     public WebElement inputFindStore;
 
-    @FindBy (css = webElementButtonSearchFindStore)
+    @FindBy(css = webElementButtonSearchFindStore)
     public WebElement buttonSearchFindStore;
 
+    @FindBy(css = webElementButtonOnEbayMotors)
+    public WebElement buttonOnEbayMotors;
+
+    @FindBy(css = webElementSelectVehicle)
+    public WebElement selectVehicle;
+
+    @FindBy(css = webElementSelectVehicleMake)
+    public WebElement selectVehicleMake;
+
+    @FindBy(css = webElementSelectVehicleModel)
+    public WebElement selectVehicleModel;
+
+    @FindBy(css = webElementInputVehicleYearLow)
+    public WebElement inputVehicleYearLow;
+
+    @FindBy(css = webElementInputVehicleYearHigh)
+    public WebElement inputVehicleYearHigh;
+
+    @FindBy(css = webElementSelectVehicleTransmission)
+    public WebElement selectVehicleTransmission;
+
+    @FindBy(css = webElementSelectVehicleSortBy)
+    public WebElement selectVehicleSortBy;
+
+    @FindBy(css = webElementButtonSearchOnEbayMotors)
+    public WebElement buttonSearchOnEbayMotors;
+
+    @FindBy(xpath = webElementTextVehicleSearchResult)
+    public WebElement textVehicleSearchResult;
 
     public void navigateToAdvancedSearchPage() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(linkAdvancedSearch));
@@ -91,31 +122,34 @@ public class AdvancedSearchPageActions extends WebAPI {
         System.out.println("Selected \"" + category + "\" in Category dropdown");
     }
 
-    public void checkCheckbox(String checkboxName) {
+    public void clickCheckbox(String checkboxName) {
 
-        switch (checkboxName){
-            case "Title and Description": new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxTitleAndDescription, false));
-                selectCheckboxTitleAndDescription();
-            break;
-            case "Completed listings": new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxCompletedListings, false));
-                selectCheckboxCompletedListings();
-            break;
-            case "Sold listings": new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxSoldListings, false));
-                selectCheckboxSoldListings();
+        switch (checkboxName) {
+            case "Title and Description":
+                new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxTitleAndDescription, false));
+                clickCheckboxTitleAndDescription();
+                break;
+            case "Completed listings":
+                new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxCompletedListings, false));
+                clickCheckboxCompletedListings();
+                break;
+            case "Sold listings":
+                new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxSoldListings, false));
+                clickCheckboxSoldListings();
         }
     }
 
-    public void selectCheckboxCompletedListings() {
+    public void clickCheckboxCompletedListings() {
         clickOnElement(checkboxCompletedListings);
         System.out.println("Checked \"Completed Listings\" checkbox");
     }
 
-    public void selectCheckboxSoldListings() {
+    public void clickCheckboxSoldListings() {
         clickOnElement(checkboxSoldListings);
         System.out.println("Checked \"Sold Listings\" checkbox");
     }
 
-    public void selectCheckboxTitleAndDescription() {
+    public void clickCheckboxTitleAndDescription() {
         clickOnElement(checkboxTitleAndDescription);
         System.out.println("Checked \"Title and Description\" checkbox");
     }
@@ -132,8 +166,8 @@ public class AdvancedSearchPageActions extends WebAPI {
         System.out.println("Clicked Search button (bottom)");
     }
 
-    public void selectCheckboxShowItemsPricedFrom() {
-        new WebDriverWait(driver,10).until(ExpectedConditions.elementSelectionStateToBe(checkboxShowItemsPricedFrom, false));
+    public void clickCheckboxShowItemsPricedFrom() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementSelectionStateToBe(checkboxShowItemsPricedFrom, false));
         clickOnElement(checkboxShowItemsPricedFrom);
         System.out.println("Checked \"Show Items Priced From\" checkbox");
     }
@@ -175,7 +209,7 @@ public class AdvancedSearchPageActions extends WebAPI {
     }
 
     public void clickOnFindStoreButton() {
-        new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(buttonFindStore));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(buttonFindStore));
 
         try {
             sleepFor(1);
@@ -213,5 +247,103 @@ public class AdvancedSearchPageActions extends WebAPI {
         clickOnElement(buttonSearchFindStore);
         System.out.println("Clicked \"Find Store\" button");
     }
+
+    public void clickOnEbayMotorsButton() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(buttonOnEbayMotors));
+
+        try {
+            sleepFor(1);
+            clickOnElement(buttonOnEbayMotors);
+            System.out.println("Clicked \"On Ebay Motors\" button");
+        } catch (Exception e) {
+            System.out.println("Unable to click on \"On Ebay Motors\" button --- Trying again");
+            clickOnElement(buttonOnEbayMotors);
+        }
+    }
+
+    public void selectVehicleType(String vehicleType) {
+        List<WebElement> vehicleTypeList = driver.findElements(By.cssSelector(getWebElementListSelectVehicle()));
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOfAllElements(vehicleTypeList));
+
+        Select select = new Select(selectVehicle);
+        select.selectByVisibleText(vehicleType);
+        System.out.println("Selected " + vehicleType + "from Vehicle Type select element");
+    }
+
+    public void selectVehicleMake(String vehicleMake) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(selectVehicleMake));
+
+        Select select = new Select(selectVehicleMake);
+        select.selectByVisibleText(vehicleMake);
+        System.out.println("Selected " + vehicleMake + "from Vehicle Make dropdown");
+    }
+
+    public void selectVehicleModel(String vehicleModel) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(selectVehicleModel));
+
+        Select select = new Select(selectVehicleModel);
+        select.selectByVisibleText(vehicleModel);
+        System.out.println("Selected " + vehicleModel + "from Vehicle Model dropdown");
+    }
+
+    public void enterKeysFromYearVehicle(String fromYear) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(inputVehicleYearLow));
+
+        inputVehicleYearLow.sendKeys(fromYear);
+        System.out.println("Entered " + fromYear + "in From Year input field");
+    }
+
+    public void enterKeysToYearVehicle(String toYear) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(inputVehicleYearHigh));
+
+        inputVehicleYearHigh.sendKeys(toYear);
+        System.out.println("Entered " + toYear + "in To Year input field");
+    }
+
+    public void selectVehicleTransmission(String vehicleTransmission) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(selectVehicleTransmission));
+
+        Select select = new Select(selectVehicleTransmission);
+        select.selectByVisibleText(vehicleTransmission);
+        System.out.println("Selected " + vehicleTransmission + "from Vehicle Transmission dropdown");
+    }
+
+    public void selectSortBy(String sortBy) {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(selectVehicleSortBy));
+
+        Select select = new Select(selectVehicleSortBy);
+        select.selectByVisibleText(sortBy);
+        System.out.println("Selected " + sortBy + "from Sort By dropdown");
+    }
+
+    public void clickOnEbayMotorsSearchButton() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(buttonSearchOnEbayMotors));
+        clickOnElement(buttonSearchOnEbayMotors);
+        System.out.println("Clicked Search button (On Ebay Motors)");
+    }
+
+    public String getVehicleSearchResultText() {
+        new WebDriverWait(driver, 10).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.visibilityOf(textVehicleSearchResult));
+
+        return textVehicleSearchResult.getText();
+    }
+
 
 }

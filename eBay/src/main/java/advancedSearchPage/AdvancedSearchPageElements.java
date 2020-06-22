@@ -47,5 +47,38 @@ public class AdvancedSearchPageElements {
     // Find Store Search Button (CSS)
     public static final String webElementButtonSearchFindStore = "#adv_search_from button";
 
+    // On Ebay Motors Button (CSS)
+    public static final String webElementButtonOnEbayMotors = "#LeftPanel a[href*='sofindtype=21']";
+
+    // Ebay Motors Vehicle Select (CSS)
+    public static final String webElementSelectVehicle = "#fisc";
+
+    // Ebay Motors Vehicle Select (LIST) (CSS)
+    private static final String webElementListSelectVehicle = "#fisc > option";
+    public static String getWebElementListSelectVehicle() { return webElementListSelectVehicle; }
+
+    // Ebay Motors Vehicle Make Select (CSS)
+    public static final String webElementSelectVehicleMake = "#make";
+
+    // Ebay Motors Vehicle Model Select (CSS)
+    public static final String webElementSelectVehicleModel = "#model";
+
+    // Ebay Motors Vehicle Year Low Input Field (CSS)
+    public static final String webElementInputVehicleYearLow = "#_yrl";
+
+    // Ebay Motors Vehicle Year High Input Field (CSS)
+    public static final String webElementInputVehicleYearHigh = "#_yrh";
+
+    // Ebay Motors Vehicle Transmission Select (CSS)
+    public static final String webElementSelectVehicleTransmission = "#transmission";
+
+    // Ebay Motors Sort By Select (CSS)
+    public static final String webElementSelectVehicleSortBy = "#_sop";
+
+    // Ebay Motors Search Button (CSS)
+    public static final String webElementButtonSearchOnEbayMotors = "#adv_search_from button";
+
+    // Ebay Motors Search Result Assert Element (xPath)
+    public static final String webElementTextVehicleSearchResult = "//div[@class='cat-link']//a";
 
 }

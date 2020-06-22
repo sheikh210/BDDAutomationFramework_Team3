@@ -72,7 +72,7 @@ public class AdvancedSearchSteps extends WebAPI {
     @And("user selects {string} from Search Including section")
     public void user_selects_from_Search_Including_section(String string) {
         getInItElements();
-        advancedSearchPageActions.checkCheckbox(string);
+        advancedSearchPageActions.clickCheckbox(string);
     }
 
 
@@ -80,7 +80,7 @@ public class AdvancedSearchSteps extends WebAPI {
     @And("user selects 'Show Items Priced From' checkbox")
     public void user_selects_Show_Items_Priced_From_checkbox() {
         getInItElements();
-        advancedSearchPageActions.selectCheckboxShowItemsPricedFrom();
+        advancedSearchPageActions.clickCheckboxShowItemsPricedFrom();
     }
 
     @And("user inputs {string} in Minimum Price input field")
@@ -96,7 +96,7 @@ public class AdvancedSearchSteps extends WebAPI {
     }
 
 
-    //
+    // Advanced Search - Find Store
     @And("user clicks on Find Stores button")
     public void user_clicks_on_Find_Stores_button() {
         getInItElements();
@@ -116,6 +116,61 @@ public class AdvancedSearchSteps extends WebAPI {
     }
 
 
+    // Advanced Search - On Ebay Motors
+    @And("user clicks on On Ebay Motors button")
+    public void user_clicks_on_On_Ebay_Motors_button() {
+        getInItElements();
+        advancedSearchPageActions.clickOnEbayMotorsButton();
+    }
+
+    @And("user selects {string} from Vehicle Type select menu")
+    public void user_selects_from_Vehicle_Type_select_menu(String vehicleType) {
+        getInItElements();
+        advancedSearchPageActions.selectVehicleType(vehicleType);
+    }
+
+    @And("user selects {string} from Vehicle Make dropdown")
+    public void user_selects_from_Vehicle_Make_dropdown(String vehicleMake) {
+        getInItElements();
+        advancedSearchPageActions.selectVehicleMake(vehicleMake);
+    }
+
+    @And("user selects {string} from Vehicle Model dropdown")
+    public void user_selects_from_Vehicle_Model_dropdown(String vehicleModel) {
+        getInItElements();
+        advancedSearchPageActions.selectVehicleModel(vehicleModel);
+    }
+
+    @And("user inputs {string} in From Year input field")
+    public void user_inputs_in_From_Year_input_field(String fromYear) {
+        getInItElements();
+        advancedSearchPageActions.enterKeysFromYearVehicle(fromYear);
+    }
+
+    @And("user inputs {string} in To Year input field")
+    public void user_inputs_in_To_Year_input_field(String toYear) {
+        getInItElements();
+        advancedSearchPageActions.enterKeysToYearVehicle(toYear);
+    }
+
+    @And("user selects {string} from Vehicle Transmission dropdown")
+    public void user_selects_from_Vehicle_Transmission_dropdown(String vehicleTransmission) {
+        getInItElements();
+        advancedSearchPageActions.selectVehicleTransmission(vehicleTransmission);
+    }
+
+    @And("user selects {string} from Sort By field")
+    public void user_selects_from_Sort_By_field(String sortBy) {
+        getInItElements();
+        advancedSearchPageActions.selectSortBy(sortBy);
+    }
+
+    @And("user clicks On Ebay Motors Search button")
+    public void user_clicks_On_Ebay_Motors_Search_button() {
+        getInItElements();
+        advancedSearchPageActions.clickOnEbayMotorsSearchButton();
+    }
+
 
     // Asserts
     @Then("user should be navigated to {string} page")
@@ -130,6 +185,14 @@ public class AdvancedSearchSteps extends WebAPI {
         String actualPriceRange = advancedSearchPageActions.resultPriceRange.getText();
 
         Assert.assertEquals(actualPriceRange, expectedPriceRange, "PRICE RANGE DOES NOT MATCH");
+    }
+
+    @Then("user should see {string} to the left of vehicle search results")
+    public void user_should_see_above_vehicle_search_results(String expectedText) {
+        getInItElements();
+        String actualText = advancedSearchPageActions.getVehicleSearchResultText();
+
+        Assert.assertEquals(actualText, expectedText, "SEARCH RESULT TEXT DOES NOT MATCH");
     }
 
 
