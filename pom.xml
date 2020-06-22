@@ -12,12 +12,10 @@
         <module>Generic</module>
         <module>aetna</module>
         <module>bankOfAmerica</module>
-        <module>deltaAirlines</module>
         <module>eBay</module>
         <module>espn</module>
         <module>stJude</module>
         <module>tripAdvisor</module>
-        <module>verizonWireless</module>
         <module>deltaAirlines</module>
         <module>verizonWireless</module>
     </modules>

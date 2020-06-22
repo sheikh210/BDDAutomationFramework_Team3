@@ -7,13 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tripAdvisor" />
+        <module name="verizonWireless" />
         <module name="bankOfAmerica" />
         <module name="eBay" />
         <module name="aetna" />
         <module name="Generic" />
         <module name="espn" />
         <module name="stJude" />
+        <module name="deltaAirlines" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="deltaAirlines" target="1.8" />
+      <module name="verizonWireless" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
