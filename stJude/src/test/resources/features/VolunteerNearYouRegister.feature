@@ -9,7 +9,7 @@ Feature: Validate user can submit volunteer application
   Scenario Outline: User should be able to fill out application
   and register to apply to become a volunteer with St. Jude
 
-    And user switches to the newly opened tab with title "Volunteer at a Local Event - St. Jude Children's Research Hospital"
+    And user switches to the newly opened tab
     And user inputs "<firstName>" in First Name input field
     And user inputs "<lastName>" in Last Name input field
     And user clicks Calendar button Date of Birth input field

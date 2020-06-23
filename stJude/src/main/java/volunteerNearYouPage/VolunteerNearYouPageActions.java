@@ -89,6 +89,27 @@ public class VolunteerNearYouPageActions extends WebAPI {
     @FindBy (css = webElementTextNameVolunteerRegistrationPage)
     public WebElement textNameVolunteerRegistrationPage;
 
+    @FindBy (css = webElementButtonSearchVolunteerOpportunities)
+    public WebElement buttonSearchVolunteerOpportunities;
+
+    @FindBy (css = webElementInputLocation)
+    public WebElement inputLocation;
+
+    @FindBy (css = webElementDropdownDistance)
+    public WebElement dropdownDistance;
+
+    @FindBy (css = webElementInputKeyword)
+    public WebElement inputKeyword;
+
+    @FindBy (css = webElementButtonEnabledSearch)
+    public WebElement buttonEnabledSearch;
+
+    @FindBy (css = webElementTextOpportunitySearch)
+    public WebElement textOpportunitySearch;
+
+    @FindBy (css = webElementTextOpportunitySearchFilterTag)
+    public WebElement textOpportunitySearchDistanceFilterTag;
+
 
     public void navigateToVolunteerNearYouPage() {
         new WebDriverWait(driver, 10)
@@ -118,22 +139,15 @@ public class VolunteerNearYouPageActions extends WebAPI {
         System.out.println("Clicked \"Register To Volunteer\" button");
     }
 
-    public String switchTabVolunteerRegistration(String pageTitle) {
+    public void switchTabs() {
         java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
 
         String parentWindow = iter.next();
         String childWindow = iter.next();
         driver.switchTo().window(childWindow);
 
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(1))
-                .until(ExpectedConditions.titleIs(pageTitle));
-
         String actualTitle = driver.getTitle();
         System.out.println("Switched to tab: " + actualTitle);
-
-        return actualTitle;
     }
 
     public void inputFirstName(String firstName) {
@@ -427,6 +441,82 @@ public class VolunteerNearYouPageActions extends WebAPI {
 
         return textNameVolunteerRegistrationPage.getText();
     }
+
+    public void clickButtonSearchVolunteerOpportunities() {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(buttonSearchVolunteerOpportunities));
+
+        try {
+            clickJScript(buttonSearchVolunteerOpportunities);
+            System.out.println("Clicked \"Search Volunteer Opportunities\" button");
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK ON \"SEARCH VOLUNTEER OPPORTUNITIES\" BUTTON --- TRYING AGAIN");
+            clickOnElement(buttonSearchVolunteerOpportunities);
+        }
+    }
+
+    public void inputLocationSearchVolunteerOpportunitiesPage(String location) {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(inputLocation));
+
+        try {
+            sleepFor(1);
+            inputLocation.sendKeys(location);
+            System.out.println("Entered " + location + "in \"Location\" input field");
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    public void selectDistanceSearchVolunteerOpportunitiesPage(String distance) {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(dropdownDistance));
+
+        Select select = new Select(dropdownDistance);
+
+        try {
+            sleepFor(1);
+            select.selectByVisibleText(distance);
+            System.out.println("Selected \"" + distance + "\" from \"Distance\" dropdown");
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    public void clickButtonEnabledSearchVolunteerOpportunities() {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(ExpectedConditions.elementToBeClickable(buttonEnabledSearch));
+
+        try {
+            sleepFor(1);
+            clickJScript(buttonEnabledSearch);
+            System.out.println("Clicked \"Search\" button");
+            sleepFor(2);
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK ON \"SEARCH\" BUTTON --- TRYING AGAIN");
+            clickOnElement(buttonEnabledSearch);
+        }
+    }
+
+    public String getHeaderTextOpportunitySearchPage() {
+        String partialURL = "opp_search?";
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(textOpportunitySearch));
+
+        return textOpportunitySearch.getText();
+    }
+
+
 }
 
 

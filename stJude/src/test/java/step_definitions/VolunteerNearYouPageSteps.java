@@ -1,18 +1,15 @@
 package step_definitions;
 
 import common.WebAPI;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import io.cucumber.java.*;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 import volunteerNearYouPage.VolunteerNearYouPageActions;
 import java.io.IOException;
 
 public class VolunteerNearYouPageSteps extends WebAPI {
 
-    SoftAssert softAssert = new SoftAssert();
     VolunteerNearYouPageActions volunteerNearYouPageActions = new VolunteerNearYouPageActions();
 
     public void getInItElements() {
@@ -25,10 +22,10 @@ public class VolunteerNearYouPageSteps extends WebAPI {
                 "http://stjude.org/");
     }
 
-//    @After
-//    public void cleanUp() {
-//        driver.quit();
-//    }
+    @After
+    public void cleanUp() {
+        driver.quit();
+    }
 
 
     // Background
@@ -38,7 +35,6 @@ public class VolunteerNearYouPageSteps extends WebAPI {
         volunteerNearYouPageActions.navigateToVolunteerNearYouPage();
     }
 
-
     // Volunteer Registration
     @When("user clicks on Register To Volunteer button")
     public void user_clicks_on_Register_To_Volunteer_button() {
@@ -46,12 +42,10 @@ public class VolunteerNearYouPageSteps extends WebAPI {
         volunteerNearYouPageActions.clickButtonRegisterToVolunteer();
     }
 
-    @And("user switches to the newly opened tab with title {string}")
-    public void user_switches_to_the_newly_opened_tab_with_title(String expectedTitle) {
+    @And("user switches to the newly opened tab")
+    public void user_switches_to_the_newly_opened_tab() {
         getInItElements();
-
-        Assert.assertEquals(volunteerNearYouPageActions.switchTabVolunteerRegistration(expectedTitle), expectedTitle,
-                "VOLUNTEER REGISTRATION PAGE TITLE DOES NOT MATCH");
+        volunteerNearYouPageActions.switchTabs();
     }
 
     @And("user inputs {string} in First Name input field")
@@ -203,4 +197,39 @@ public class VolunteerNearYouPageSteps extends WebAPI {
 
         Assert.assertEquals(actualName, hello+expectedFirstName, "NAME DOES NOT MATCH");
     }
+
+
+    // Search Volunteer Opportunities
+    @And("user clicks on Search Volunteer Opportunities button")
+    public void user_clicks_on_Search_Volunteer_Opportunities_button() {
+        getInItElements();
+        volunteerNearYouPageActions.clickButtonSearchVolunteerOpportunities();
+    }
+
+    @And("user inputs {string} in Location input field")
+    public void user_inputs_in_Location_input_field(String location) {
+        getInItElements();
+        volunteerNearYouPageActions.inputLocationSearchVolunteerOpportunitiesPage(location);
+    }
+
+    @And("user selects {string} from Distance dropdown")
+    public void user_selects_from_Distance_dropdown(String distance) {
+        getInItElements();
+        volunteerNearYouPageActions.selectDistanceSearchVolunteerOpportunitiesPage(distance);
+    }
+
+    @And("user clicks Search button")
+    public void user_clicks_Search_button() {
+        getInItElements();
+        volunteerNearYouPageActions.clickButtonEnabledSearchVolunteerOpportunities();
+    }
+
+    @Then("user should see {string} on top left")
+    public void user_should_see_on_top_left(String expectedHeaderText) {
+        getInItElements();
+        String actualHeaderText = volunteerNearYouPageActions.getHeaderTextOpportunitySearchPage();
+
+        Assert.assertEquals(actualHeaderText, expectedHeaderText, "OPPORTUNITY SEARCH PAGE HEADER TEXT DOES NOT MATCH");
+    }
+
 }
