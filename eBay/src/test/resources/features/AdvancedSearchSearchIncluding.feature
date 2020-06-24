@@ -17,6 +17,6 @@ Feature: Validate user can search for item using keywords and checking "Search I
 
     Examples:
       | keyword        | category                      | checkbox              | pageTitle                                |
-      | jersey         | Clothing, Shoes & Accessories | Title and Description | jersey in Fashion \| eBay                |
+      | jersey         | Clothing, Shoes & Accessories | Title and Description | eBay Search: Advanced Search               |
       | hand sanitizer | Everything Else               | Completed listings    | hand sanitizer in Everything Else \|eBay |
       | hand soap      | All Categories                | Sold listings         | hand soap for sale \| eBay               |

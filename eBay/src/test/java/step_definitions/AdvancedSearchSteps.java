@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AdvancedSearchSteps extends WebAPI {
 
-    AdvancedSearchPageActions advancedSearchPageActions = new AdvancedSearchPageActions();
+    static AdvancedSearchPageActions advancedSearchPageActions;
 
     public void getInItElements () {
         advancedSearchPageActions = PageFactory.initElements(driver, AdvancedSearchPageActions.class);
@@ -74,9 +74,10 @@ public class AdvancedSearchSteps extends WebAPI {
     }
 
     @Then("user should be navigated to {string} page")
-    public void user_should_be_navigated_to_page(String title) {
+    public void user_should_be_navigated_to_page(String pageTitle) {
         getInItElements();
-        Assert.assertEquals(driver.getTitle(), title, "PAGE TITLE DOES NOT MATCH");
+       // title="eBay Search: Advanced Search";
+        Assert.assertEquals(driver.getTitle(), pageTitle, "PAGE TITLE DOES NOT MATCH");
     }
 
 }
