@@ -125,18 +125,17 @@ public class VolunteerNearYouPageActions extends WebAPI {
     @FindBy (css = webElementTextRegionalOfficeSearch)
     public WebElement textRegionalOfficeSearch;
 
-
     public void navigateToVolunteerNearYouPage() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonGetInvolved));
 
         clickOnElement(buttonGetInvolved);
         System.out.println("Clicked \"Get Involved\" header dropdown menu");
 
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonVolunteerLocally));
 
@@ -145,8 +144,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonRegisterToVolunteer() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonRegisterToVolunteer));
 
@@ -166,8 +166,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputFirstName(String firstName) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputFirstName));
 
@@ -176,8 +177,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputLastName(String lastName) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputLastName));
 
@@ -186,8 +188,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonCalendar() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(buttonCalendar));
 
@@ -201,8 +204,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonLeftCalendarYear() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(boxPopupCalendar));
 
@@ -270,8 +274,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void selectEthnicity(String ethnicity) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(dropdownSelectEthnicity));
 
@@ -280,8 +285,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void selectGender(String gender) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(dropdownSelectGender));
 
@@ -290,8 +296,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputAddress(String address) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputAddress));
 
@@ -300,8 +307,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputCity(String city) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputCity));
 
@@ -310,8 +318,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void selectState(String state) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(dropdownSelectState));
 
@@ -320,8 +329,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputZipCode(String zipcode) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputZipCode));
 
@@ -330,8 +340,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputPrimaryPhone(String phoneNum) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputPrimaryPhone));
 
@@ -340,8 +351,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void selectPhoneType(String phoneType) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(dropdownSelectPhoneType));
 
@@ -350,8 +362,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputEmail(String email) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputEmail));
 
@@ -360,8 +373,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputPassword(String password) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputPassword));
 
@@ -370,8 +384,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputVerifyPassword(String password) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputVerifyPassword));
 
@@ -380,13 +395,13 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonWaiverAgreements() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.visibilityOf(buttonWaiverAgreements));
 
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonWaiverAgreements));
 
@@ -401,8 +416,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickCheckboxReleaseWaiverLiability() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(checkboxReleaseWaiverLiability));
 
@@ -416,8 +432,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonSubmitReleaseWaiverLiability() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonSubmitReleaseWaiverLiability));
 
@@ -431,8 +448,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getURLVolunteerRegistrationPage(String url) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.urlToBe(url));
 
@@ -440,8 +458,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getTextVolunteerRegistrationPage() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(textVolunteerRegistrationPage));
 
@@ -449,8 +468,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getNameVolunteerRegistrationPage() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(textNameVolunteerRegistrationPage));
 
@@ -458,8 +478,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonSearchVolunteerOpportunities() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonSearchVolunteerOpportunities));
 
@@ -473,8 +494,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputLocationSearchVolunteerOpportunitiesPage(String location) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputLocation));
 
@@ -488,8 +510,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void selectDistanceSearchVolunteerOpportunitiesPage(String distance) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(dropdownDistance));
 
@@ -505,8 +528,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickButtonEnabledSearchVolunteerOpportunities() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.elementToBeClickable(buttonEnabledSearch));
 
@@ -522,8 +546,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getHeaderTextOpportunitySearchPage() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(textOpportunitySearch));
 
@@ -531,8 +556,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickPlayEmbeddedVideo() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.elementToBeClickable(buttonPlayVideo));
 
@@ -547,8 +573,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickPauseEmbeddedVideo() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(buttonPlayingVideo));
 
@@ -583,8 +610,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void inputStateRegionalOfficeLookup(String state){
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(inputRegionalOffice));
 
@@ -598,21 +626,19 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public void clickSearchResultStateRegionalOffice(String state) {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath(getWebElementButtonStateSelect(state)))));
 
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2))
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(getWebElementButtonStateSelect(state))));
 
         try {
-            sleepFor(2);
             clickJScript(driver.findElement(By.xpath(getWebElementButtonStateSelect(state))));
             System.out.println("Clicked \"" + state + "\" button in search result dropdown menu");
-            sleepFor(1);
         } catch (Exception e) {
             System.out.println("UNABLE TO CLICK \"" + state + "\" BUTTON IN SEARCH RESULT DROPDOWN MENU --- TRYING AGAIN");
             clickJScript(driver.findElement(By.xpath(getWebElementButtonStateSelect(state))));
@@ -620,8 +646,9 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getTextRegionalOfficeResultPage() {
-        new WebDriverWait(driver, 10)
-                .withTimeout(Duration.ofSeconds(10))
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(textRegionalOfficeSearch));
 
@@ -630,9 +657,3 @@ public class VolunteerNearYouPageActions extends WebAPI {
 
 
 }
-
-
-
-
-
-
