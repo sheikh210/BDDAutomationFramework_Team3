@@ -1,7 +1,6 @@
 package realEstateCenterPage;
 
 import common.WebAPI;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,6 +29,15 @@ public class RealEstateCenterPageActions extends WebAPI {
 
     @FindBy (css = webElementTextPartnerSiteFilterTag)
     private WebElement textPartnerSiteFilterTag;
+
+    @FindBy (css = webElementButtonHomeValue)
+    private WebElement buttonHomeValue;
+
+    @FindBy (css = webElementTextFirstLineHomeAddress)
+    private WebElement textFirstLineHomeAddress;
+
+    @FindBy (css = webElementTextSecondLineHomeAddress)
+    private WebElement textSecondLineHomeAddress;
 
     public void navigateToRealEstateCenterPage() {
         wait = new WebDriverWait(driver, 10);
@@ -116,4 +124,44 @@ public class RealEstateCenterPageActions extends WebAPI {
         return capturedFilterTagText;
     }
 
+    public void clickButtonHomeValue() {
+        wait = new WebDriverWait(driver, 10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(buttonHomeValue));
+
+        try {
+            clickJScript(buttonHomeValue);
+            System.out.println("Clicked \"Home Value\" button");
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK \"HOME VALUE\" BUTTON --- TRYING AGAIN");
+            clickJScript(buttonHomeValue);
+        }
+    }
+
+    public void switchTabs() {
+        java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
+
+        String parentWindow = iter.next();
+        String childWindow = iter.next();
+        driver.switchTo().window(childWindow);
+
+        String actualTitle = driver.getTitle();
+        System.out.println("Switched to tab: " + actualTitle);
+    }
+
+    public String getTextHomeAddressHomeValueSearchResultPage() {
+        wait = new WebDriverWait(driver, 10);
+
+        wait.until(ExpectedConditions.visibilityOf(textFirstLineHomeAddress));
+        String address1 = textFirstLineHomeAddress.getText();
+
+        wait.until(ExpectedConditions.visibilityOf(textSecondLineHomeAddress));
+        String address2 = textSecondLineHomeAddress.getText();
+
+        String capturedAddress = address1 + ", " + address2;
+        System.out.println("Captured address: " + capturedAddress);
+
+        return capturedAddress;
+    }
 }
+

@@ -14,5 +14,11 @@ public class RealEstateCenterPageElements {
     public static final String webElementButtonContinueModal = "#broker-warning-confirm";
     // Partner Site Filter Tag Text
     public static final String webElementTextPartnerSiteFilterTag = "#location-criteria-list a[href='#NearbyAreasPopup']";
+    // "Home Value" Button
+    public static final String webElementButtonHomeValue = "#homepage-hero-section div.search-option.js-search-option.js-home-value.bofa";
+    // Home Address Text First Line - Home Value Search Result Page
+    public static final String webElementTextFirstLineHomeAddress = "#section-summary span.hvt-property__address-street";
+    // Home Address Text First Line - Home Value Search Result Page
+    public static final String webElementTextSecondLineHomeAddress = "#section-summary span.hvt-property__address-csz";
 
 }
