@@ -74,5 +74,18 @@ public class VolunteerNearYouPageElements {
     // Opportunity Search Filter Tag Text (Distance) (CSS)
     public static final String webElementTextOpportunitySearchFilterTag = "#search_view span:nth-child(2) > button > span.ng-binding.ng-scope";
 
+    // Play Video Button (CSS)
+    public static final String webElementButtonPlayVideo = "button.vjs-big-play-button";
+    // Playing Video Button (Click to Pause) - Video User Control Bar (CSS)
+    public static final String webElementButtonPlayingVideo = "button.vjs-play-control.vjs-control.vjs-button.vjs-playing";
+    // Paused Video Button (Click to Play) - Video User Control Bar (CSS)
+    public static final String webElementButtonPausedVideo = "button.vjs-play-control.vjs-control.vjs-button.vjs-paused";
+
+    // Regional Office Input (CSS)
+    public static final String webElementInputRegionalOffice = "input[aria-label*='regional office']";
+    // State Select Button - Search Dropdown (xPath)
+    public static String getWebElementButtonStateSelect(String state) { return "//*[@id=\"myLink\"][contains(text(),'" + state + "')]"; }
+    // Regional Office Search Header Text (CSS)
+    public static final String webElementTextRegionalOfficeSearch = "#site-content h1";
 
 }

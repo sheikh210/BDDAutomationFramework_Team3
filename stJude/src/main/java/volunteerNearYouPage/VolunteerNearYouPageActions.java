@@ -110,6 +110,21 @@ public class VolunteerNearYouPageActions extends WebAPI {
     @FindBy (css = webElementTextOpportunitySearchFilterTag)
     public WebElement textOpportunitySearchDistanceFilterTag;
 
+    @FindBy (css = webElementButtonPlayVideo)
+    public WebElement buttonPlayVideo;
+
+    @FindBy (css = webElementButtonPlayingVideo)
+    public WebElement buttonPlayingVideo;
+
+    @FindBy (css = webElementButtonPausedVideo)
+    public WebElement buttonPausedVideo;
+
+    @FindBy (css = webElementInputRegionalOffice)
+    public WebElement inputRegionalOffice;
+
+    @FindBy (css = webElementTextRegionalOfficeSearch)
+    public WebElement textRegionalOfficeSearch;
+
 
     public void navigateToVolunteerNearYouPage() {
         new WebDriverWait(driver, 10)
@@ -507,13 +522,110 @@ public class VolunteerNearYouPageActions extends WebAPI {
     }
 
     public String getHeaderTextOpportunitySearchPage() {
-        String partialURL = "opp_search?";
         new WebDriverWait(driver, 10)
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOf(textOpportunitySearch));
 
         return textOpportunitySearch.getText();
+    }
+
+    public void clickPlayEmbeddedVideo() {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(buttonPlayVideo));
+
+        try {
+            clickJScript(buttonPlayVideo);
+            System.out.println("Clicked \"Play\" button on embedded video");
+            sleepFor(2);
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK \"PLAY\" BUTTON ON EMBEDDED VIDEO --- TRYING AGAIN");
+            clickJScript(buttonPlayVideo);
+        }
+    }
+
+    public void clickPauseEmbeddedVideo() {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(buttonPlayingVideo));
+
+        try {
+            sleepFor(2);
+            clickJScript(buttonPlayingVideo);
+            System.out.println("Clicked \"Pause\" button in embedded video control bar");
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK \"PAUSE\" BUTTON IN EMBEDDED VIDEO CONTROL BAR --- TRYING AGAIN");
+            clickJScript(buttonPlayingVideo);
+        }
+    }
+
+    public boolean isVideoPlayerPaused() {
+        boolean flag = false;
+        if (buttonPausedVideo.isDisplayed()) {
+            flag = true;
+
+            try {
+                sleepFor(2);
+                clickJScript(buttonPausedVideo);
+                System.out.println("Clicked \"Play\" button in embedded video control bar");
+                sleepFor(2);
+            } catch (Exception e) {
+                System.out.println("UNABLE TO CLICK \"PLAY\" BUTTON IN EMBEDDED VIDEO CONTROL BAR --- TRYING AGAIN");
+                clickJScript(buttonPausedVideo);
+            }
+            return flag;
+        } else {
+            return flag;
+        }
+    }
+
+    public void inputStateRegionalOfficeLookup(String state){
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(inputRegionalOffice));
+
+        try {
+            inputRegionalOffice.sendKeys(state);
+            System.out.println("Entered " + state + " in \"Regional Office State Lookup\" input field");
+        } catch (Exception e) {
+            System.out.println("UNABLE TO ENTER " + state.toUpperCase() + " IN \"REGIONAL OFFICE STATE LOOKUP\" INPUT FIELD --- TRYING AGAIN");
+            inputRegionalOffice.sendKeys(state);
+        }
+    }
+
+    public void clickSearchResultStateRegionalOffice(String state) {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath(getWebElementButtonStateSelect(state)))));
+
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(getWebElementButtonStateSelect(state))));
+
+        try {
+            sleepFor(2);
+            clickJScript(driver.findElement(By.xpath(getWebElementButtonStateSelect(state))));
+            System.out.println("Clicked \"" + state + "\" button in search result dropdown menu");
+            sleepFor(1);
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK \"" + state + "\" BUTTON IN SEARCH RESULT DROPDOWN MENU --- TRYING AGAIN");
+            clickJScript(driver.findElement(By.xpath(getWebElementButtonStateSelect(state))));
+        }
+    }
+
+    public String getTextRegionalOfficeResultPage() {
+        new WebDriverWait(driver, 10)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(textRegionalOfficeSearch));
+
+        return textRegionalOfficeSearch.getText();
     }
 
 

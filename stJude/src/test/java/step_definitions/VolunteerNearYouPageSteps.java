@@ -28,14 +28,18 @@ public class VolunteerNearYouPageSteps extends WebAPI {
     }
 
 
-    // Background
+    /**
+     * Background
+     */
     @Given("user is on St. Jude Volunteer Near You page")
     public void user_is_on_St_Jude_Volunteer_Near_You_page() {
         getInItElements();
         volunteerNearYouPageActions.navigateToVolunteerNearYouPage();
     }
 
-    // Volunteer Registration
+    /**
+     * Volunteer Registration
+     */
     @When("user clicks on Register To Volunteer button")
     public void user_clicks_on_Register_To_Volunteer_button() {
         getInItElements();
@@ -199,7 +203,9 @@ public class VolunteerNearYouPageSteps extends WebAPI {
     }
 
 
-    // Search Volunteer Opportunities
+    /**
+     * Search Volunteer Opportunities
+     */
     @And("user clicks on Search Volunteer Opportunities button")
     public void user_clicks_on_Search_Volunteer_Opportunities_button() {
         getInItElements();
@@ -232,4 +238,44 @@ public class VolunteerNearYouPageSteps extends WebAPI {
         Assert.assertEquals(actualHeaderText, expectedHeaderText, "OPPORTUNITY SEARCH PAGE HEADER TEXT DOES NOT MATCH");
     }
 
+
+    /**
+     * Play Video
+     */
+    @When("user clicks play button on embedded video")
+    public void user_clicks_play_button_on_embedded_video() {
+        getInItElements();
+        volunteerNearYouPageActions.clickPlayEmbeddedVideo();
+    }
+
+    @Then("user should be able to pause video while it's playing")
+    public void user_should_be_able_to_pause_video_while_it_s_playing() {
+        getInItElements();
+        volunteerNearYouPageActions.clickPauseEmbeddedVideo();
+
+        Assert.assertTrue(volunteerNearYouPageActions.isVideoPlayerPaused());
+    }
+
+    /**
+     * Search Regional Offices
+     */
+    @When("user inputs {string} in search input field")
+    public void user_inputs_in_search_input_field(String state) {
+        getInItElements();
+        volunteerNearYouPageActions.inputStateRegionalOfficeLookup(state);
+    }
+
+    @And("user clicks on {string} in the dropdown that appears")
+    public void user_clicks_on_in_the_dropdown_that_appears(String state) {
+        getInItElements();
+        volunteerNearYouPageActions.clickSearchResultStateRegionalOffice(state);
+    }
+
+    @Then("user should see {string} on the next page")
+    public void user_should_see_on_the_next_page(String expectedState) {
+        getInItElements();
+        String actualText = volunteerNearYouPageActions.getTextRegionalOfficeResultPage();
+
+        Assert.assertEquals(actualText, expectedState, "STATE NAME DOES NOT MATCH");
+    }
 }
