@@ -1,5 +1,4 @@
-package step_definitions;
-
+package find_a_form_step_definitions;
 import common.WebAPI;
 import find_a_form.FindAForm;
 import io.cucumber.java.After;
@@ -13,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.io.IOException;
+
 
 public class FindAFormStepDefinitions extends WebAPI {
 
@@ -105,15 +105,24 @@ public class FindAFormStepDefinitions extends WebAPI {
 
     }
 
+
+
+    @When("user click on EAP menu button")
+    public void userClickOnEAPMenuButton() {
+        getInItElements();
+        findAForm.doClickOnEAPMenu();
+    }
+
+    @Then("user will see Dispute Resulation Request is displayed")
+    public void userWillSeeDisputeResulationRequestIsDisplayed() {
+        getInItElements();
+        boolean actualValue=findAForm.isDisputeResulaionRequest_Displayed();
+        Assert.assertEquals(actualValue,true);
+    }
     @After
     public static void cleanUp() {
         // driver.close();
 
         driver.quit();
     }
-
-
 }
-
-
-

@@ -1,18 +1,14 @@
-package step_definitions;
+package ebay_step_definitions;
 
 import advancedSearchPage.AdvancedSearchPageActions;
 import common.WebAPI;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
-import java.util.List;
 
 public class AdvancedSearchSteps extends WebAPI {
 

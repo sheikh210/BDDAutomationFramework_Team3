@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class KeepInTouchStepDefinitions extends WebAPI {
+public class KeepInTouchSteps extends WebAPI {
 
     static KeepInTouch keepInTouch;
 

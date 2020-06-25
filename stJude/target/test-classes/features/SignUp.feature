@@ -1,10 +1,12 @@
+@SignUp
+
 Feature: SignUp Multiple Clients
 
   Background: Clients input their information in signUp form
 
     Given Clients are in SignUp page
 
-  @SignUp
+
 
   Scenario Outline: Sign up multiple Clients
 

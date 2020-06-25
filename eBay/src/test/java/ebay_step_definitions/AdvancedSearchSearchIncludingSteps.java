@@ -1,4 +1,4 @@
-package step_definitions;
+package ebay_step_definitions;
 
 import advancedSearchPage.AdvancedSearchPageActions;
 import io.cucumber.java.en.*;

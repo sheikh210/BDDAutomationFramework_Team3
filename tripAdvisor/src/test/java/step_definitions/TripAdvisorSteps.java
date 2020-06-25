@@ -13,15 +13,17 @@ import tripadvisorhome.TripAdvisorHome;
 
 import java.io.IOException;
 
-public class TripAdvisorStepDefinitions extends WebAPI {
+public class TripAdvisorSteps extends WebAPI {
 
     static TripAdvisorHome tripAdvisorHome;
-    public static void getInItElements(){
 
-        tripAdvisorHome= PageFactory.initElements(driver,TripAdvisorHome.class);
+    public static void getInItElements() {
+
+        tripAdvisorHome = PageFactory.initElements(driver, TripAdvisorHome.class);
     }
+
     @Before
-    public void setUp () throws IOException {
+    public void setUp() throws IOException {
 
         // setUp(false, "browserstack", "windows", "10", "chrome", "83", "https://www.tripadvisor.com/");
         setUp(false, "browserstack", "OS X", "Catalina", "chrome", "83",
@@ -33,8 +35,8 @@ public class TripAdvisorStepDefinitions extends WebAPI {
         System.out.println("Navigated to homepage");
 
 
-
     }
+
     @And("visitor inputs {string} in the keyword field")
     public void visitorInputsTheKeywordField(String keyWord) {
         getInItElements();
@@ -53,11 +55,10 @@ public class TripAdvisorStepDefinitions extends WebAPI {
     public void visitorShouldSee(String ExpectedOutcome) {
         getInItElements();
 
-        String actualText=tripAdvisorHome.getSearchResultText();
-        Assert.assertEquals(actualText,ExpectedOutcome, "CITY NAME DOES NOT MATH");
+        String actualText = tripAdvisorHome.getSearchResultText();
+        Assert.assertEquals(actualText, ExpectedOutcome, "CITY NAME DOES NOT MATH");
 
     }
-
 
 
     @After
@@ -68,7 +69,6 @@ public class TripAdvisorStepDefinitions extends WebAPI {
     }
 
 
-
-
-
 }
+
+

@@ -1,3 +1,4 @@
+@FindAForm
 Feature: user are in Homepage
 
   Background: User click on Find A Form
@@ -19,15 +20,17 @@ Feature: user are in Homepage
     When user click on Behavioral Health Precertification
     Then user would see ABA Request Button
 
-  @FindAForm
+
   Scenario:
     When user click on Behavioral Health Precertification
     And user click on ABA Request Button
     Then user will see the page
 
-    Scenario:
-      When user click on Behavioral Health Precertification
-      Then user would see Transcranial Magnetic Stimulation Button
+  Scenario:
+    When user click on Behavioral Health Precertification
+    Then user would see Transcranial Magnetic Stimulation Button
 
-      Scenario:
-        When user click on
+
+  Scenario:
+    When user click on EAP menu button
+    Then user will see Dispute Resulation Request is displayed

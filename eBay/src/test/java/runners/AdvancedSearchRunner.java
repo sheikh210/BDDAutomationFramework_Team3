@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "step_definitions",
+        glue = "ebay_step_definitions",
         plugin = "pretty",
         tags = "@AdvancedSearchSearchIncluding"
 )
