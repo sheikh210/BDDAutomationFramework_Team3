@@ -27,6 +27,7 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver;
+    public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
