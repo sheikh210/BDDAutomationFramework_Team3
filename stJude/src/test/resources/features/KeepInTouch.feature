@@ -1,22 +1,19 @@
-@SignUp
-
 Feature: SignUp Multiple Clients
 
-  Background: Clients input their information in signUp form
-
-    Given Clients are in SignUp page
-
+  Background: Clients input their information in signUp for
+    Given Clients is at homepage
+    When Clients click on sign up for Email or text update button
 
 
   Scenario Outline: Sign up multiple Clients
 
-    Then Clients input "<firstName>"
+    Then Clients input their first names"<firstName>"
 
-    And Clients input "<lastName>"
+    And Clients input their last names"<lastName>"
 
-    And Clients input "<mobilePhoneNumber>"
+    And Clients input their mobile phone numbers"<mobilePhoneNumber>"
 
-    And Clients inputs their "<eMail>"
+    And Clients inputs their Emails"<eMail>"
 
     When Clients Click on submitButton
 

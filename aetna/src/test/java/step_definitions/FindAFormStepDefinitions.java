@@ -1,4 +1,4 @@
-package find_a_form_step_definitions;
+package step_definitions;
 import common.WebAPI;
 import find_a_form.FindAForm;
 import io.cucumber.java.After;
@@ -29,23 +29,27 @@ public class FindAFormStepDefinitions extends WebAPI {
 
         // setUp(false, "browserstack", "windows", "10", "chrome", "83", "https://www.tripadvisor.com/");
         setUp(false, "browserstack", "OS X", "Catalina", "chrome", "83",
-                "https://www.aetna.com/health-care-professionals/health-care-professional-forms.html");
+                "https://www.aetna.com/health-care-professionals.html");
     }
 
-
-    @Given("user are in Find A Form page")
-    public void userAreInFindAFormPage() {
+    @Given("user are in home page")
+    public void userAreInHomePage() {
         getInItElements();
-        System.out.println("User are in Find a form page");
-
+        System.out.println("You are in home page now");
     }
 
-    @And("user clicks on tri angle One button")
+    @When("user click on Find a form button")
+    public void userClickOnFindAFormButton() {
+        getInItElements();
+        findAForm.navigateToFindAFormPage();
+    }
+
+    @Then("user clicks on tri angle One button")
     public void userClicksOnTriAngleOneButton() {
         getInItElements();
         findAForm.doClickOnTriAngleButton();
-
     }
+
 
     @When("user click on Online provider button")
     public void userClickOnOnlineProviderButton() {
@@ -97,14 +101,14 @@ public class FindAFormStepDefinitions extends WebAPI {
         Assert.assertEquals(actuoalUrl, expectedUrl, "Expected url not found");
 
     }
+
     @Then("user would see Transcranial Magnetic Stimulation Button")
     public void userWouldSeeTranscranialMagneticStimulationButton() {
         getInItElements();
-        boolean actualValue=findAForm.isTranscranialMagneticStimulationButtonDisplayed();
-        Assert.assertEquals(actualValue,true);
+        boolean actualValue = findAForm.isTranscranialMagneticStimulationButtonDisplayed();
+        Assert.assertEquals(actualValue, true);
 
     }
-
 
 
     @When("user click on EAP menu button")
@@ -116,9 +120,98 @@ public class FindAFormStepDefinitions extends WebAPI {
     @Then("user will see Dispute Resulation Request is displayed")
     public void userWillSeeDisputeResulationRequestIsDisplayed() {
         getInItElements();
-        boolean actualValue=findAForm.isDisputeResulaionRequest_Displayed();
+        boolean actualValue = findAForm.isDisputeResulaionRequest_Displayed();
+        Assert.assertEquals(actualValue, true);
+
+    }
+
+
+
+    @Then("user click on Network Application Requests menu")
+    public void userClickOnNetworkApplicationRequestsMenu() {
+        getInItElements();
+        findAForm.doClickOnNetworkApplicationRequests();
+    }
+
+    @And("user click on Medical requests Button")
+    public void userClickOnMedicalRequestsButton() {
+        getInItElements();
+        findAForm.doClickOnMedicalRequestButton();
+    }
+
+    @And("user write last name in the field {string}")
+    public void userWriteLastNameInTheField(String lastName) {
+        getInItElements();
+        findAForm.doWriteLastName(lastName);
+    }
+
+    @And("user write first name in the field {string}")
+    public void userWriteFirstNameInTheField(String firstName) {
+        getInItElements();
+        findAForm.doWriteFirstName(firstName);
+    }
+
+    @And("user write month of birth in the field{string}")
+    public void userWriteMonthOfBirthInTheField(String dayOfBirth) {
+        getInItElements();
+        findAForm.doWriteDayOfBirth(dayOfBirth);
+    }
+
+    @And("user write date of birth in the field{string}")
+    public void userWriteDateOfBirthInTheField(String monthOfBirth) {
+        getInItElements();
+        findAForm.doWriteMonthOfBirth(monthOfBirth);
+    }
+
+    @And("user write year of birth in the field{string}")
+    public void userWriteYearOfBirthInTheField(String yearOfBirth) {
+        getInItElements();
+        findAForm.doWriteYearOfBirth(yearOfBirth);
+    }
+
+    @And("user write Email in the field{string}")
+    public void userWriteEmailInTheField(String eMail) {
+        getInItElements();
+        findAForm.doWriteEmail(eMail);
+    }
+
+    @And("user write again Email in the field{string}")
+    public void userWriteAgainEmailInTheField(String confirmEmail) {
+        getInItElements();
+        findAForm.doWriteEmailAgain(confirmEmail);
+    }
+
+    @And("user click on tax type button")
+    public void userClickOnTaxTypeButton() {
+        getInItElements();
+        findAForm.clickONTaxTypeButton();
+    }
+
+    @And("user select Select social security button")
+    public void userSelectSelectSocialSecurityButton() {
+        getInItElements();
+        findAForm.selectSocialSecurityButton();
+    }
+
+    @And("user click on Specialist button")
+    public void userClickOnSpecialistButton() {
+        getInItElements();
+        findAForm.clickOnSpecialist();
+    }
+
+    @When("user click on submit button")
+    public void userClickOnSubmitButton() {
+        getInItElements();
+        findAForm.clickOnSubmitButton();
+    }
+
+    @Then("user will see the text")
+    public void userWillSeeTheText() {
+        getInItElements();
+        boolean actualValue=findAForm.isTextDisplayed();
         Assert.assertEquals(actualValue,true);
     }
+
     @After
     public static void cleanUp() {
         // driver.close();

@@ -27,6 +27,7 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver;
+    public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
@@ -35,7 +36,7 @@ public class WebAPI {
 
     public void setUp(boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
-                              String browserVersion, String url) throws IOException {
+                      String browserVersion, String url) throws IOException {
 
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {

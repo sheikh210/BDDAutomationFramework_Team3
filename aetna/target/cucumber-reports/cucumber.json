@@ -1,0 +1,586 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 32062000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user are in home page",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userAreInHomePage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T14:16:11.988Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3239319000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.setUp()"
+            }
+          }
+        ],
+        "line": 31,
+        "name": "",
+        "description": "",
+        "id": "user-are-in-homepage;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 157563000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4190608000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on Find a form button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnFindAFormButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2664507000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user click on Network Application Requests menu",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnNetworkApplicationRequestsMenu()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\n\tat find_a_form.FindAForm.doClickOnMedicalRequestButton(FindAForm.java:180)\n\tat step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton(FindAFormStepDefinitions.java:139)\n\tat ✽.user click on Medical requests Button(file:///Users/user/IdeaProjects/BDDAutomationFramework_Team3/aetna/src/test/resources/features/FormFillUp.feature:15)\n",
+              "duration": 3365000,
+              "status": "failed"
+            },
+            "line": 15,
+            "name": "user click on Medical requests Button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 213000,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "user write last name in the field \"Rash\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Rash\"",
+                  "offset": 34
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteLastNameInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 88000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "user write first name in the field \"Sarker\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sarker\"",
+                  "offset": 35
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteFirstNameInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 379000,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "user write month of birth in the field\"20\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"20\"",
+                  "offset": 38
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteMonthOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 105000,
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "user write date of birth in the field\"06\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"06\"",
+                  "offset": 37
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteDateOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 99000,
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "user write year of birth in the field\"1985\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"1985\"",
+                  "offset": 37
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteYearOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 69000,
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "user write Email in the field\"smh@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"smh@gmail.com\"",
+                  "offset": 29
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteEmailInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 134000,
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "user write again Email in the field\"smh@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"smh@gmail.com\"",
+                  "offset": 35
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteAgainEmailInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 183000,
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "user click on tax type button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnTaxTypeButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 158000,
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "user select Select social security button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userSelectSelectSocialSecurityButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 114000,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "user click on Specialist button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnSpecialistButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1234000,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "user click on submit button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnSubmitButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 156000,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "user will see the text",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userWillSeeTheText()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SmokeTest"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1580000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user are in home page",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userAreInHomePage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T14:16:22.333Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2265943000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.setUp()"
+            }
+          }
+        ],
+        "line": 32,
+        "name": "",
+        "description": "",
+        "id": "user-are-in-homepage;;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 168983000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3435450000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on Find a form button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnFindAFormButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2164344000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user click on Network Application Requests menu",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnNetworkApplicationRequestsMenu()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\n\tat find_a_form.FindAForm.doClickOnMedicalRequestButton(FindAForm.java:180)\n\tat step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton(FindAFormStepDefinitions.java:139)\n\tat ✽.user click on Medical requests Button(file:///Users/user/IdeaProjects/BDDAutomationFramework_Team3/aetna/src/test/resources/features/FormFillUp.feature:15)\n",
+              "duration": 1122000,
+              "status": "failed"
+            },
+            "line": 15,
+            "name": "user click on Medical requests Button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 88000,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "user write last name in the field \"Kazi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Kazi\"",
+                  "offset": 34
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteLastNameInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 72000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "user write first name in the field \"Maoya\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Maoya\"",
+                  "offset": 35
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteFirstNameInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 81000,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "user write month of birth in the field\"23\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"23\"",
+                  "offset": 38
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteMonthOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 64000,
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "user write date of birth in the field\"06\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"06\"",
+                  "offset": 37
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteDateOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 67000,
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "user write year of birth in the field\"1990\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"1990\"",
+                  "offset": 37
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteYearOfBirthInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 67000,
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "user write Email in the field\"kazi@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"kazi@gmail.com\"",
+                  "offset": 29
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteEmailInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 139000,
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "user write again Email in the field\"kazi@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"kazi@gmail.com\"",
+                  "offset": 35
+                }
+              ],
+              "location": "step_definitions.FindAFormStepDefinitions.userWriteAgainEmailInTheField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70000,
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "user click on tax type button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnTaxTypeButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70000,
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "user select Select social security button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userSelectSelectSocialSecurityButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 66000,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "user click on Specialist button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnSpecialistButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 66000,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "user click on submit button",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userClickOnSubmitButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 128000,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "user will see the text",
+            "match": {
+              "location": "step_definitions.FindAFormStepDefinitions.userWillSeeTheText()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SmokeTest"
+          }
+        ]
+      }
+    ],
+    "name": "user are in Homepage",
+    "description": "",
+    "id": "user-are-in-homepage",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/FormFillUp.feature",
+    "tags": [
+      {
+        "name": "@SmokeTest",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

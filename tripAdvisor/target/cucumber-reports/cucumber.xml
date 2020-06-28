@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="26.743">
+    <testcase classname="searching  Multiple Places" name="search multiple Places" time="8.65">
+        <system-out>
+            <![CDATA[Given visitor at TripAdvisor Homepage.......................................passed
+And visitor inputs "Dhaka City" in the keyword field........................passed
+When visitor clicks on first search result button...........................passed
+Then visitor should see "Dhaka City"........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="searching  Multiple Places" name="search multiple Places 2" time="5.947">
+        <system-out>
+            <![CDATA[Given visitor at TripAdvisor Homepage.......................................passed
+And visitor inputs "Dubai" in the keyword field.............................passed
+When visitor clicks on first search result button...........................passed
+Then visitor should see "Dubai".............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="searching  Multiple Places" name="search multiple Places 3" time="5.911">
+        <system-out>
+            <![CDATA[Given visitor at TripAdvisor Homepage.......................................passed
+And visitor inputs "Singapore" in the keyword field.........................passed
+When visitor clicks on first search result button...........................passed
+Then visitor should see "Singapore".........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="searching  Multiple Places" name="search multiple Places 4" time="5.946">
+        <system-out>
+            <![CDATA[Given visitor at TripAdvisor Homepage.......................................passed
+And visitor inputs "Florida" in the keyword field...........................passed
+When visitor clicks on first search result button...........................passed
+Then visitor should see "Florida Keys"......................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

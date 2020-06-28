@@ -26,34 +26,42 @@ public class KeepInTouchSteps extends WebAPI {
     public void setUp() throws IOException {
 
         setUp(false, "browserstack", "OS X", "Catalina", "chrome", "83",
-                "https://www.stjude.org/get-involved/other-ways/stay-connected.html");
+                "https://www.stjude.org");
+    }
+
+    @Given("Clients is at homepage")
+    public void clientsIsAtHomepage() {
+       // getInItElements();
+        System.out.println("Clients are in Homepage");
+    }
+
+    @When("Clients click on sign up for Email or text update button")
+    public void clientsClickOnSignUpForEmailOrTextUpdateButton() {
+        getInItElements();
+        keepInTouch.navToKeepInTouchPage();
     }
 
 
-    @Given("Clients are in SignUp page")
-    public void clientsAreInSignUpPage() {
-        System.out.println("Navigated to homepage");
-    }
-
-    @Then("Clients input {string}")
-    public void clientsInputFirstNameInField(String firstName) {
+    @Then("Clients input their first names{string}")
+    public void clientsInputTheirFirstNames(String firstName) {
         getInItElements();
         keepInTouch.enterFirstNameInField(firstName);
     }
 
-    @And("Clients inputs their {string}")
-    public void clientsInputsTheirLastNameInField(String lastName) {
+    @And("Clients input their last names{string}")
+    public void clientsInputTheirLastNames(String lastName) {
         getInItElements();
         keepInTouch.enterLastNameInField(lastName);
     }
-    @And("Clients input {string} Mobile phone number in field")
-    public void clientsInputMobilePhoneNumberInField(String mobilePhoneNumber) {
+
+    @And("Clients input their mobile phone numbers{string}")
+    public void clientsInputTheirMobilePhoneNumbers(String mobilePhoneNumber) {
         getInItElements();
         keepInTouch.enterMobilePhoneNumberInField(mobilePhoneNumber);
     }
 
-    @And("Clients inputs their {string} eMail in field")
-    public void clientsInputsTheirEmailInField(String eMail) {
+    @And("Clients inputs their Emails{string}")
+    public void clientsInputsTheirEmails(String eMail) {
         getInItElements();
         keepInTouch.enterEmailInField(eMail);
     }
@@ -61,7 +69,6 @@ public class KeepInTouchSteps extends WebAPI {
     @When("Clients Click on submitButton")
     public void clientsClickOnSubmitButton() {
         getInItElements();
-
         keepInTouch.clickOnSubmitButton();
     }
 
@@ -71,6 +78,7 @@ public class KeepInTouchSteps extends WebAPI {
         String actualText=keepInTouch.getExpectedInvalidText();
         String expectedText="For security purposes, please check the box above and complete the challenge.";
         Assert.assertEquals(actualText,expectedText,"Expected text not Found");
+
     }
     @After
     public static void cleanUp() {
@@ -78,7 +86,4 @@ public class KeepInTouchSteps extends WebAPI {
 
         driver.quit();
     }
-
-
-
 }

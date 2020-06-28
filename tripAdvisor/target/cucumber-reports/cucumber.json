@@ -1,0 +1,421 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 717000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "visitor at TripAdvisor Homepage",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitor_at_TripAdvisor_Homepage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T13:06:31.235Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4734307000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.setUp()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "search multiple Places",
+        "description": "",
+        "id": "searching--multiple-places;search-multiple-places;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 134980000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 557792000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "visitor inputs \"Dhaka City\" in the keyword field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dhaka City\"",
+                  "offset": 15
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorInputsTheKeywordField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2201214000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "visitor clicks on first search result button",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitorClicksSearchResult()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1005451000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "visitor should see \"Dhaka City\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dhaka City\"",
+                  "offset": 19
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorShouldSee(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1118000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "visitor at TripAdvisor Homepage",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitor_at_TripAdvisor_Homepage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T13:06:39.898Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2073975000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.setUp()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "search multiple Places",
+        "description": "",
+        "id": "searching--multiple-places;search-multiple-places;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 128205000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 416195000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "visitor inputs \"Dubai\" in the keyword field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dubai\"",
+                  "offset": 15
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorInputsTheKeywordField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2277454000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "visitor clicks on first search result button",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitorClicksSearchResult()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1044965000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "visitor should see \"Dubai\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Dubai\"",
+                  "offset": 19
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorShouldSee(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 171000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "visitor at TripAdvisor Homepage",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitor_at_TripAdvisor_Homepage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T13:06:45.851Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2187887000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.setUp()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "search multiple Places",
+        "description": "",
+        "id": "searching--multiple-places;search-multiple-places;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 139192000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 512777000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "visitor inputs \"Singapore\" in the keyword field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Singapore\"",
+                  "offset": 15
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorInputsTheKeywordField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2181368000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "visitor clicks on first search result button",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitorClicksSearchResult()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 885551000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "visitor should see \"Singapore\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Singapore\"",
+                  "offset": 19
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorShouldSee(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 225000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "visitor at TripAdvisor Homepage",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitor_at_TripAdvisor_Homepage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-27T13:06:51.769Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2387673000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.setUp()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "search multiple Places",
+        "description": "",
+        "id": "searching--multiple-places;search-multiple-places;;5",
+        "after": [
+          {
+            "result": {
+              "duration": 132634000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.cleanUp()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 413924000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "visitor inputs \"Florida\" in the keyword field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Florida\"",
+                  "offset": 15
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorInputsTheKeywordField(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2243463000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "visitor clicks on first search result button",
+            "match": {
+              "location": "step_definitions.TripAdvisorSteps.visitorClicksSearchResult()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 765669000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "visitor should see \"Florida Keys\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Florida Keys\"",
+                  "offset": 19
+                }
+              ],
+              "location": "step_definitions.TripAdvisorSteps.visitorShouldSee(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "searching  Multiple Places",
+    "description": "",
+    "id": "searching--multiple-places",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/SearchMultiple.feature",
+    "tags": []
+  }
+]

@@ -7,38 +7,68 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static keep_in_touch.KeepInTouchElements.*;
 
 public class KeepInTouch extends WebAPI {
 
-    @FindBy(how = How.XPATH,using = webElementFirstNameField)
+    @FindBy(how = How.XPATH,using = webElementSignInForButton)
+    public WebElement signInForButton;
+
+    @FindBy(how = How.CSS,using = webElementFirstNameField)
     public WebElement firstNameField;
-    @FindBy(how = How.XPATH,using = webElementLastNameField)
+    @FindBy(how = How.CSS,using = webElementLastNameField)
     public WebElement lastNameField;
-    @FindBy(how = How.XPATH,using = webElementMobilePhoneNumberField)
+    @FindBy(how = How.CSS,using = webElementMobilePhoneNumberField)
     public WebElement mobilePhoneNumberField;
-    @FindBy(how = How.XPATH,using = webElementEmailField)
+    @FindBy(how = How.CSS,using = webElementEmailField)
     public WebElement emailField;
     @FindBy(how = How.XPATH,using = webElementSubmitButton)
     public WebElement submitButton;
     @FindBy(how = How.XPATH,using = webElementExpectedInvalidText)
     public WebElement expectedInvalidText;
 
+
+    public void navToKeepInTouchPage() {
+        wait=new WebDriverWait(driver,10);
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(signInForButton));
+        clickOnElement(signInForButton);
+
+
+    }
+
     public void enterFirstNameInField(String firstNameKey){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(firstNameField));
+        wait = new WebDriverWait(driver, 10);
+
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(firstNameField));
+
         firstNameField.sendKeys(firstNameKey);
     }
     public void enterLastNameInField(String lastNameKey){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(lastNameField));
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(lastNameField));
+
         lastNameField.sendKeys(lastNameKey);
     }
     public void enterMobilePhoneNumberInField(String mobilePhoneNumberKey){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(mobilePhoneNumberField));
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(mobilePhoneNumberField));
+
         mobilePhoneNumberField.sendKeys(mobilePhoneNumberKey);
     }
 
     public void enterEmailInField(String eMailKey){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(emailField));
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(emailField));
+
         emailField.sendKeys(eMailKey);
     }
     public void clickOnSubmitButton() {

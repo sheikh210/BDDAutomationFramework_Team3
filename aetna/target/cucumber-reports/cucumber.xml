@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="18.784">
+    <testcase classname="user are in Homepage" name="_2" time="10.319">
+        <failure message="" type="java.lang.NullPointerException">
+            <![CDATA[Given user are in home page.................................................passed
+When user click on Find a form button.......................................passed
+Then user click on Network Application Requests menu........................passed
+And user click on Medical requests Button...................................failed
+And user write last name in the field "Rash"................................skipped
+And user write first name in the field "Sarker".............................skipped
+And user write month of birth in the field"20"..............................skipped
+And user write date of birth in the field"06"...............................skipped
+And user write year of birth in the field"1985".............................skipped
+And user write Email in the field"smh@gmail.com"............................skipped
+And user write again Email in the field"smh@gmail.com"......................skipped
+And user click on tax type button...........................................skipped
+And user select Select social security button...............................skipped
+And user click on Specialist button.........................................skipped
+When user click on submit button............................................skipped
+Then user will see the text.................................................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at find_a_form.FindAForm.doClickOnMedicalRequestButton(FindAForm.java:180)
+	at step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton(FindAFormStepDefinitions.java:139)
+	at ✽.user click on Medical requests Button(file:///Users/user/IdeaProjects/BDDAutomationFramework_Team3/aetna/src/test/resources/features/FormFillUp.feature:15)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="user are in Homepage" name="_3" time="8.043">
+        <failure message="" type="java.lang.NullPointerException">
+            <![CDATA[Given user are in home page.................................................passed
+When user click on Find a form button.......................................passed
+Then user click on Network Application Requests menu........................passed
+And user click on Medical requests Button...................................failed
+And user write last name in the field "Kazi"................................skipped
+And user write first name in the field "Maoya"..............................skipped
+And user write month of birth in the field"23"..............................skipped
+And user write date of birth in the field"06"...............................skipped
+And user write year of birth in the field"1990".............................skipped
+And user write Email in the field"kazi@gmail.com"...........................skipped
+And user write again Email in the field"kazi@gmail.com".....................skipped
+And user click on tax type button...........................................skipped
+And user select Select social security button...............................skipped
+And user click on Specialist button.........................................skipped
+When user click on submit button............................................skipped
+Then user will see the text.................................................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at find_a_form.FindAForm.doClickOnMedicalRequestButton(FindAForm.java:180)
+	at step_definitions.FindAFormStepDefinitions.userClickOnMedicalRequestsButton(FindAFormStepDefinitions.java:139)
+	at ✽.user click on Medical requests Button(file:///Users/user/IdeaProjects/BDDAutomationFramework_Team3/aetna/src/test/resources/features/FormFillUp.feature:15)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

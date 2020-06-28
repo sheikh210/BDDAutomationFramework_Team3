@@ -1,17 +1,19 @@
-@FindAForm
+
+
 Feature: user are in Homepage
 
   Background: User click on Find A Form
-    Given user are in Find A Form page
+    Given user are in home page
+    When user click on Find a form button
 
   Scenario:
-    And user clicks on tri angle One button
+    Then user clicks on tri angle One button
     When user click on Online provider button
     Then user would see Request Changes to Provider Data page
 
 
   Scenario:
-    And user clicks on tri angle One button
+    Then user clicks on tri angle One button
     When user click on Online provider button
     Then user would see expected Text
 
@@ -34,3 +36,4 @@ Feature: user are in Homepage
   Scenario:
     When user click on EAP menu button
     Then user will see Dispute Resulation Request is displayed
+

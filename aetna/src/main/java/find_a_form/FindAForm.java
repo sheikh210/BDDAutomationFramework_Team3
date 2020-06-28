@@ -3,15 +3,21 @@ package find_a_form;
 import common.WebAPI;
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static find_a_form.FindAFormElements.*;
 
 public class FindAForm extends WebAPI {
 
+    @FindBy(how = How.XPATH, using = webElementFindAFormButton)
+    public WebElement findAForm;
     @FindBy(how = How.XPATH, using = webElementTriAngleOneButton)
     public WebElement triAngleOneButton;
     @FindBy(how = How.XPATH, using = webElementOnlineProviderButton)
@@ -26,9 +32,47 @@ public class FindAForm extends WebAPI {
     public WebElement transcranialMagneticStimulationButton;
     @FindBy(how = How.XPATH, using = webElementEAPMenu)
     public WebElement eAPMenu;
- @FindBy(how = How.XPATH, using = webElementDisputeResulaionRequest)
+    @FindBy(how = How.XPATH, using = webElementDisputeResulaionRequest)
     public WebElement disputeResulaionRequest;
+    @FindBy(how = How.XPATH, using = webElementNetworkApplicationRequestsMenu)
+    public WebElement networkApplicationRequestsMenu;
+    @FindBy(how = How.XPATH, using = webElementMedicalRequestButton)
+    public WebElement medicalRequestButton;
+    @FindBy(how = How.XPATH, using = webElementLastNameField)
+    public WebElement lastNameField;
+    @FindBy(how = How.XPATH, using = webElementFirstNameField)
+    public WebElement firstNameField;
+    @FindBy(how = How.XPATH, using = webElementMonthOfBirthField)
+    public WebElement monthOfBirthField;
+    @FindBy(how = How.XPATH, using = webElementDateOfBirthField)
+    public WebElement dateOfBirthField;
+    @FindBy(how = How.XPATH, using = webElementYearOfBirthField)
+    public WebElement yearOfBirthField;
+    @FindBy(how = How.XPATH, using = webElementEmailField)
+    public WebElement emailField;
+    @FindBy(how = How.XPATH, using = webElementVerifyEmailField)
+    public WebElement verifyEmailField;
+    @FindBy(how = How.XPATH, using = webElementTaxIdTypeButton)
+    public WebElement taxIdTypeButton;
+    @FindBy(how = How.XPATH, using = webElementApplyingAsButton)
+    public WebElement applyingAsButton;
+    @FindBy(how = How.XPATH, using = webElementSubmitButton)
+    public WebElement submitButton;
+    @FindBy(how = How.XPATH, using = webElementInvalidText)
+    public WebElement invalidText;
 
+
+    public void navigateToFindAFormPage() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(findAForm));
+        try {
+            sleepFor(2);
+            clickOnElement(findAForm);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
     public void doClickOnTriAngleButton() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(triAngleOneButton));
@@ -102,7 +146,8 @@ public class FindAForm extends WebAPI {
         return transcranialMagneticStimulationButton.isDisplayed();
 
     }
-    public void doClickOnEAPMenu(){
+
+    public void doClickOnEAPMenu() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(eAPMenu));
         try {
             sleepFor(2);
@@ -113,11 +158,105 @@ public class FindAForm extends WebAPI {
 
 
     }
-    public boolean isDisputeResulaionRequest_Displayed(){
+
+    public boolean isDisputeResulaionRequest_Displayed() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(disputeResulaionRequest));
 
         return disputeResulaionRequest.isDisplayed();
 
+
+    }
+    public void doClickOnNetworkApplicationRequests(){
+
+
+        new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(networkApplicationRequestsMenu));
+        driver.navigate().refresh();
+
+        clickOnElement(networkApplicationRequestsMenu);
+
+
+    }
+    public void doClickOnMedicalRequestButton(){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(medicalRequestButton));
+        medicalRequestButton.submit();
+
+    }
+    public void doWriteLastName(String lastNameKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(lastNameField));
+        driver.navigate().refresh();
+        lastNameField.sendKeys(lastNameKey);
+    }
+    public void doWriteFirstName(String firstNameKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(firstNameField));
+        firstNameField.sendKeys(firstNameKey);
+    }
+    public void doWriteDayOfBirth(String dayOfBirthKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(dateOfBirthField));
+        dateOfBirthField.sendKeys(dayOfBirthKey);
+    } public void doWriteMonthOfBirth(String monthOfBirthKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(monthOfBirthField));
+        monthOfBirthField.sendKeys(monthOfBirthKey);
+
+    } public void doWriteYearOfBirth(String yearOfBirthKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(yearOfBirthField));
+        yearOfBirthField.sendKeys(yearOfBirthKey);
+    }public void doWriteEmail(String eMail){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(emailField));
+        emailField.sendKeys(eMail);
+    }public void doWriteEmailAgain(String confirmEmailKey){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(verifyEmailField));
+        verifyEmailField.sendKeys(confirmEmailKey);
+    }
+    public void clickONTaxTypeButton(){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(taxIdTypeButton));
+        clickOnElement(taxIdTypeButton);
+
+    } public void selectSocialSecurityButton(){
+        Select select=new Select(taxIdTypeButton);
+        select.selectByVisibleText("S - Social Security number");
+
+
+    }
+    public void clickOnSpecialist(){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(applyingAsButton));
+        clickOnElement(applyingAsButton);
+
+
+    }
+    public void clickOnSubmitButton(){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.elementToBeClickable(submitButton));
+
+        clickOnElement(submitButton);
+
+
+    }
+    public boolean isTextDisplayed(){
+        wait.withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(ExpectedConditions.visibilityOf(invalidText));
+        return invalidText.isDisplayed();
 
     }
 

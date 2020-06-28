@@ -1,4 +1,4 @@
-@SearchMultiple
+
 Feature: searching  Multiple Places
 
   Background:
